@@ -2,7 +2,7 @@
 
 ```
 git clone https://github.com/dragulceo/social_examples
-composer install
+php composer.phar install
 bower install
 ```
 
