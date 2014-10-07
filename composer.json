@@ -1,4 +1,7 @@
 {
+    "autoload": {
+        "psr-4": {"Local\\": "src/"}
+    },
     "require": {
         "facebook/php-sdk-v4": "4.0.*"
     }
