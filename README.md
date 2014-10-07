@@ -1,7 +1,7 @@
 # Installation
 
 ```
-git clone
+git clone https://github.com/dragulceo/social_examples
 composer install
 bower install
 ```
