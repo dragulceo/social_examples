@@ -2,6 +2,7 @@
 session_start();
 require 'vendor/autoload.php';
 
+use Local\FileWriter;
 use Local\LinkedIn;
 
 // OAuth 2 Control Flow
@@ -32,6 +33,11 @@ if (isset($_GET['error'])) {
 // Congratulations! You have a valid token. Now fetch your profile
 $user = LinkedIn::fetch('GET', '/v1/people/~');
 
+$matches = false;
+if(preg_match('/\bid=([0-9]+)\b/', $user, $matches)) {
+    $id = $matches[1];
+    FileWriter::writeProfile($user, $id, FileWriter::$PROFILE_TYPE_LINKEDIN);
+}
 $isLoggedIn = true;
 $profileData = $user;
 include("template.php");

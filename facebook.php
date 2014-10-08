@@ -5,9 +5,9 @@ require 'vendor/autoload.php';
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
 use Facebook\FacebookSession;
-use Facebook\GraphUser;
 use Facebook\FacebookRequestException;
 use Local\Config;
+use Local\FileWriter;
 
 FacebookSession::setDefaultApplication(Config::$FACEBOOK_APP_ID, Config::$FACEBOOK_APP_SECRET);
 
@@ -28,8 +28,10 @@ if ($session) {
     $response = $request->execute();
     $data = $response->getResponse();
 
+    $json = json_encode($data);
+    FileWriter::writeProfile($json, $data->id, FileWriter::$PROFILE_TYPE_FACEBOOK);
     $isLoggedIn = true;
-    $profileData = json_encode($data);
+    $profileData = $json;
     include("template.php");
 
 } else {
