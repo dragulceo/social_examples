@@ -29,7 +29,7 @@ if ($session) {
     $data = $response->getResponse();
 
     $profileData = json_encode($data);
-    FileWriter::writeProfile($profileData, $data->id, FileWriter::$PROFILE_TYPE_FACEBOOK);
+    FileWriter::writeProfile($profileData, $data->id, Config::$PROFILE_FILANAME_PREFIX_FACEBOOK);
     $isLoggedIn = true;
     include("template.php");
 

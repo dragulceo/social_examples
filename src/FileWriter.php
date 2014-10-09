@@ -11,14 +11,13 @@ namespace Local;
 
 class FileWriter
 {
-    public static $PROFILE_TYPE_FACEBOOK = 'fb';
-    public static $PROFILE_TYPE_LINKEDIN = 'ln';
-
-    private static function getProfilePath($id, $type) {
-        return Config::getProfileSaveDir() . '/' . $type . '_' . $id . '.json';
+    private static function getProfilePath($id, $prefix)
+    {
+        return Config::getProfileSaveDir() . '/' . $prefix . '_' . $id . '.json';
     }
 
-    public static function writeProfile($data, $id, $type) {
-        file_put_contents(self::getProfilePath($id, $type), $data);
+    public static function writeProfile($data, $id, $prefix)
+    {
+        file_put_contents(self::getProfilePath($id, $prefix), $data);
     }
 } 

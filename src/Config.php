@@ -33,5 +33,9 @@ class Config
         return 'http://' . $_SERVER['HTTP_HOST'] . '/teamviewer';
     }
 
+    public static $PROFILE_FILANAME_PREFIX_FACEBOOK = 'fb';
+    public static $PROFILE_FILENAME_PREFIX_LINKEDIN = 'ln';
+    public static $PROFILE_FILENAME_PREFIX_TEAMVIEWER = 'tw';
+
 }
 
