@@ -34,7 +34,9 @@ if ($session) {
     include("template.php");
 
 } else {
-    $loginUrl = $helper->getLoginUrl();
-    header("Location: ". $loginUrl);
+
+    //Add 'user_about_me' permission key in the array below to get the full profile
+    $loginUrl = $helper->getLoginUrl(array('email', 'public_profile'));
+    header("Location: " . $loginUrl);
 }
 
