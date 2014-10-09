@@ -7,7 +7,7 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,17 +22,20 @@
 if (!empty($isLoggedIn)) {
     ?>
     <h1>You are logged in</h1>
-    <a href="./" class="btn btn-default">Home</a>
+    <a href="/" class="btn btn-default">Home</a>
     <h1>Your profile data:</h1>
     <pre><?php echo $profileData; ?></pre>
     <?php
 } else {
     ?>
     <h1>Social Example</h1>
-    <a class="btn btn-default" href="facebook.php" title="Login with Facebook">Login with
-        Facebook</a>
-    <a class="btn btn-default" href="linkedin.php" title="Login with Linkedin">Login with
+    <a class="btn btn-default" href="/facebook.php" title="Login with Facebook">
+        <i class="glyphicon glyphicon-"></i> Login with Facebook
+    </a>
+    <a class="btn btn-default" href="/linkedin.php" title="Login with Linkedin">Login with
         LinkedIn</a>
+    <a class="btn btn-default" href="/teamviewer/index.php" title="Login with TeamViewer">Login with
+        TeamViewer</a>
 <?php
 }
 ?>
@@ -40,6 +43,6 @@ if (!empty($isLoggedIn)) {
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
