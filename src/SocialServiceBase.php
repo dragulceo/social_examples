@@ -112,7 +112,11 @@ abstract class SocialServiceBase implements SocialServiceInterface
 
     protected function processAccessTokenResponse($response)
     {
-        return false;
+        $token = json_decode($response);
+        // Store access token and expiration time
+        $this->sessionSave('access_token', $token->access_token);
+        $this->sessionSave('expires_in', $token->expires_in);
+        $this->sessionSave('expires_at', time() + $token->expires_in);
     }
 
     protected function getAccessTokenContext()
@@ -173,7 +177,7 @@ abstract class SocialServiceBase implements SocialServiceInterface
         }
         return $response;
     }
-
+    
     public function checkState()
     {
         // OAuth 2 Control Flow

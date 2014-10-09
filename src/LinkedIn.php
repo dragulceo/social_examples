@@ -42,18 +42,6 @@ class LinkedIn extends SocialServiceBase
         ));
     }
 
-    protected function processAccessTokenResponse($response)
-    {
-        // Native PHP object, please
-        $token = json_decode($response);
-
-        // Store access token and expiration time
-        $this->sessionSave('access_token', $token->access_token);
-        $this->sessionSave('expires_in', $token->expires_in);
-        $this->sessionSave('expires_at', time() + $token->expires_in);
-
-    }
-
     protected function getFetchURLBase()
     {
         return 'https://api.linkedin.com';
