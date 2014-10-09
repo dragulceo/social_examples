@@ -24,7 +24,7 @@ class Config
 
     public static function getProfileSaveDir()
     {
-        __DIR__ . "/../profiles";
+        return __DIR__ . "/../profiles";
     }
     public static $TEAMVIEWER_APP_ID = '';
     public static $TEAMVIEWER_APP_SECRET = '';
