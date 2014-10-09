@@ -21,6 +21,11 @@ class Config
         return 'http://' . $_SERVER['HTTP_HOST'] . '/linkedin.php';
     }
 
+
+    public static function getProfileSaveDir()
+    {
+        __DIR__ . "/../profiles";
+    }
     public static $TEAMVIEWER_APP_ID = '';
     public static $TEAMVIEWER_APP_SECRET = '';
     public static function getTeamViewerRedirectURL()
