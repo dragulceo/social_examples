@@ -28,10 +28,9 @@ if ($session) {
     $response = $request->execute();
     $data = $response->getResponse();
 
-    $json = json_encode($data);
-    FileWriter::writeProfile($json, $data->id, FileWriter::$PROFILE_TYPE_FACEBOOK);
+    $profileData = json_encode($data);
+    FileWriter::writeProfile($profileData, $data->id, FileWriter::$PROFILE_TYPE_FACEBOOK);
     $isLoggedIn = true;
-    $profileData = $json;
     include("template.php");
 
 } else {
